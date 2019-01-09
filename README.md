@@ -2,7 +2,7 @@
 
 >
 
-[![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe) 
 
 ![](swiping.gif)
 
@@ -51,4 +51,4 @@ class Example extends React.Component {
 
 ## License
 
-BSD © [browniefed](https://github.com/browniefed)
+MIT © [browniefed](https://github.com/browniefed)
