@@ -1,7 +1,5 @@
 # react-simple-swipe
 
->
-
 [![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe) 
 
 ![](swiping.gif)
