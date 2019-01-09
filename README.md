@@ -1,27 +1,47 @@
 # react-swipes
 
-> 
+>
 
 [![NPM](https://img.shields.io/npm/v/react-swipes.svg)](https://www.npmjs.com/package/react-swipes) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-swipes
+yarn add react-swipes
 ```
 
 ## Usage
 
 ```tsx
-import * as React from 'react'
-
-import MyComponent from 'react-swipes'
+import React from "react";
+import Swipes from "react-swipes";
 
 class Example extends React.Component {
-  render () {
+  state = {
+    index: 0,
+    transitionTime: 0
+  };
+  render() {
     return (
-      <MyComponent />
-    )
+      <Swipes
+        images={["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]}
+        width={400}
+        height={400}
+        index={this.state.index}
+        transitionTime={this.state.transitionTime}
+        onIndexChange={(index, transitionTime) => {
+          this.setState({
+            index,
+            transitionTime
+          });
+        }}
+        onTransitionComplete={() => {
+          this.setState({
+            transitionTime: 0
+          });
+        }}
+      />
+    );
   }
 }
 ```

@@ -31,7 +31,9 @@ class Swiper extends Component<Props, State> {
     if (prevProps.index !== this.props.index) {
       this.transitionTo(
         this.props.index,
-        this.props.transitionTime || this.props.defaultTransitionTime
+        this.props.transitionTime !== undefined
+          ? this.props.transitionTime
+          : this.props.defaultTransitionTime
       );
     }
   };
