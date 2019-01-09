@@ -8,6 +8,8 @@ This is a simple web and mobile compatible swiping component. It's completely co
 
 You can simply copy and paste some of the actions below.
 
+Original inspired by this tutorial [https://codedaily.io/tutorials/67/Create-a-Snapping-Image-Swiper-like-Instagram-with-React](https://codedaily.io/tutorials/67/Create-a-Snapping-Image-Swiper-like-Instagram-with-React)
+
 ## Install
 
 ```bash
