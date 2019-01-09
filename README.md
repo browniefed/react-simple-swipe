@@ -4,8 +4,6 @@
 
 ![](swiping.gif)
 
-## Description
-
 This is a simple web and mobile compatible swiping component. It's completely controlled so you will need to handle the index changing, and transition time of the durations as well as controlling the width/height of your images.
 
 You can simply copy and paste some of the actions below.
