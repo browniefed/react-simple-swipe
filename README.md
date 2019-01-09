@@ -11,6 +11,12 @@
 yarn add react-simple-swipe
 ```
 
+or
+
+```bash
+npm install react-simple-swipe --save
+```
+
 ## Usage
 
 ```tsx
