@@ -1,8 +1,8 @@
-# react-swipes
+# react-simple-swipe
 
 >
 
-[![NPM](https://img.shields.io/npm/v/react-swipes.svg)](https://www.npmjs.com/package/react-swipes) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![](swiping.gif)
 
@@ -10,14 +10,14 @@
 ## Install
 
 ```bash
-yarn add react-swipes
+yarn add react-simple-swipe
 ```
 
 ## Usage
 
 ```tsx
 import React from "react";
-import Swipes from "react-swipes";
+import Swipes from "react-simple-swipe";
 
 class Example extends React.Component {
   state = {

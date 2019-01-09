@@ -1,5 +1,5 @@
 import React from "react";
-import Swipes from "react-swipes";
+import Swipes from "react-simple-swipe";
 
 class App extends React.Component {
   state = {

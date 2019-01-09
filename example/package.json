@@ -1,6 +1,6 @@
 {
-  "name": "react-swipes-example",
-  "homepage": "https://browniefed.github.io/react-swipes",
+  "name": "react-simple-swipe-example",
+  "homepage": "https://browniefed.github.io/react-simple-swipe",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-swipes": "link:.."
+    "react-simple-swipe": "link:.."
   },
   "scripts": {
     "start": "react-scripts start",

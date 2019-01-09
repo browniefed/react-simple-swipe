@@ -1,10 +1,10 @@
 {
-  "name": "react-swipes",
-  "version": "1.0.0",
-  "description": "",
+  "name": "react-simple-swipe",
+  "version": "0.1.0",
+  "description": "React simple image swiper",
   "author": "browniefed",
-  "license": "BSD",
-  "repository": "browniefed/react-swipes",
+  "license": "MIT",
+  "repository": "browniefed/react-simple-swipe",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -12,6 +12,12 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "keywords": [
+    "react",
+    "swipe",
+    "simple",
+    "images"
+  ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
     "test:watch": "react-scripts-ts test --env=jsdom",
