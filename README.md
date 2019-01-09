@@ -1,13 +1,12 @@
 # react-simple-swipe
 
-[![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe) 
+[![NPM](https://img.shields.io/npm/v/react-simple-swipe.svg)](https://www.npmjs.com/package/react-simple-swipe)
 
 ![](swiping.gif)
 
 This is a simple web and mobile compatible swiping component. It's completely controlled so you will need to handle the index changing, and transition time of the durations as well as controlling the width/height of your images.
 
 You can simply copy and paste some of the actions below.
-
 
 ## Install
 
@@ -27,6 +26,8 @@ npm install react-simple-swipe --save
 import React from "react";
 import Swipes from "react-simple-swipe";
 
+const IMAGES = ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"];
+
 class Example extends React.Component {
   state = {
     index: 0,
@@ -35,9 +36,24 @@ class Example extends React.Component {
   render() {
     return (
       <Swipes
-        images={["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]}
-        width={400}
-        height={400}
+        render={() => {
+          // Must return an array
+          return IMAGES.map(src => {
+            return (
+              <img
+                key={src}
+                src={src}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain"
+                }}
+              />
+            );
+          });
+        }}
+        width={500}
+        height={300}
         index={this.state.index}
         transitionTime={this.state.transitionTime}
         onIndexChange={(index, transitionTime) => {

@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 export type Props = {
   index: number;
-  images: string[];
   width: number;
   height: number;
   defaultTransitionTime: number;
   transitionTime: number;
   onIndexChange: (index: number, duration: number) => void;
   onTransitionComplete: (index: number) => void;
+  render: (index: number, duration: number, offset: number) => React.ReactNode[];
 };
 
 export type State = {
@@ -65,7 +65,9 @@ class Swiper extends Component<Props, State> {
     this.props.onTransitionComplete(this.props.index);
 
     this.setState((state, props) => {
-      const maxLength = props.images.length - 1;
+      const items = props.render(props.index, props.transitionTime, state.offset);
+
+      const maxLength = items.length - 1;
 
       let nextMovement = state.offset + delta;
 
@@ -118,7 +120,9 @@ class Swiper extends Component<Props, State> {
   };
   render() {
     const { offset } = this.state;
-    const { images, transitionTime } = this.props;
+    const items = this.props.render(this.props.index, this.props.transitionTime, this.state.offset);
+
+    const { transitionTime } = this.props;
 
     return (
       <div
@@ -144,19 +148,7 @@ class Swiper extends Component<Props, State> {
             willChange: "transform"
           }}
         >
-          {images.map(src => {
-            return (
-              <img
-                key={src}
-                src={src}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: "contain"
-                }}
-              />
-            );
-          })}
+          {items}
         </div>
         {this.props.children}
       </div>
