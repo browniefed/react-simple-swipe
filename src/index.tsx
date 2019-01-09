@@ -120,31 +120,44 @@ class Swiper extends Component<Props, State> {
     const { images, transitionTime } = this.props;
 
     return (
-      <div className="App">
+      <div
+        className="main"
+        style={{
+          width: `${this.props.width}px`,
+          height: `${this.props.height}px`,
+          overflow: "hidden",
+          position: "relative"
+        }}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}
+        onWheel={this.handleWheel}
+      >
         <div
-          className="main"
           style={{
-            width: `${this.props.width}px`,
-            height: `${this.props.height}px`
+            transform: `translateX(${offset * -1}px)`,
+            transitionDuration: `${transitionTime}s`,
+            display: "flex",
+            overflowX: "visible",
+            transitionProperty: "transform",
+            willChange: "transform"
           }}
-          onTouchStart={this.handleTouchStart}
-          onTouchMove={this.handleTouchMove}
-          onTouchEnd={this.handleTouchEnd}
-          onWheel={this.handleWheel}
         >
-          <div
-            className="swiper"
-            style={{
-              transform: `translateX(${offset * -1}px)`,
-              transitionDuration: `${transitionTime}s`
-            }}
-          >
-            {images.map(src => {
-              return <img key={src} src={src} width="100%" height="100%" />;
-            })}
-          </div>
-          {this.props.children}
+          {images.map(src => {
+            return (
+              <img
+                key={src}
+                src={src}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: "contain"
+                }}
+              />
+            );
+          })}
         </div>
+        {this.props.children}
       </div>
     );
   }
