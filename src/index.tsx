@@ -62,6 +62,7 @@ class Swiper extends Component<Props, State> {
   };
   handleMovement = (delta: number) => {
     clearTimeout(this.transitionTimeout);
+    this.props.onTransitionComplete(this.props.index);
 
     this.setState((state, props) => {
       const maxLength = props.images.length - 1;
