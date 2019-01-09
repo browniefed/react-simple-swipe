@@ -8,24 +8,33 @@ class App extends React.Component {
   };
   render() {
     return (
-      <Swipes
-        images={["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]}
-        width={500}
-        height={300}
-        index={this.state.index}
-        transitionTime={this.state.transitionTime}
-        onIndexChange={(index, transitionTime) => {
-          this.setState({
-            index,
-            transitionTime
-          });
+      <div
+        style={{
+          display: "flex",
+          height: "100vh",
+          alignItems: "center",
+          justifyContent: "center"
         }}
-        onTransitionComplete={() => {
-          this.setState({
-            transitionTime: 0
-          });
-        }}
-      />
+      >
+        <Swipes
+          images={["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]}
+          width={500}
+          height={300}
+          index={this.state.index}
+          transitionTime={this.state.transitionTime}
+          onIndexChange={(index, transitionTime) => {
+            this.setState({
+              index,
+              transitionTime
+            });
+          }}
+          onTransitionComplete={() => {
+            this.setState({
+              transitionTime: 0
+            });
+          }}
+        />
+      </div>
     );
   }
 }
