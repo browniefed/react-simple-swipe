@@ -77,9 +77,9 @@ class Example extends React.Component {
 
 ## Next / Back Buttons
 
-Because it's controlled the next/back buttons be implemented by you!
+Because it's controlled the next/back buttons can  be implemented by you however you want.
 
-Instant changes can be done by just setting `index`, or animated transitions you set `index` and `transitionTime` together.
+Instant changes can be done by just setting `index`, or animated transitions can be created by setting `index` and `transitionTime` together.
 
 ```js
 const back = state => ({
