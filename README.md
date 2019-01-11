@@ -75,6 +75,31 @@ class Example extends React.Component {
 }
 ```
 
+## Next / Back Buttons
+
+Because it's controlled the next/back buttons be implemented by you!
+
+Instant changes can be done by just setting `index`, or animated transitions you set `index` and `transitionTime` together.
+
+```js
+const back = state => ({
+  index: state.index - 1,
+  transitionTime: 0.5,
+});
+
+const next = state => ({
+  index: state.index + 1,
+  transitionTime: 0.5,
+});
+```
+
+```js
+<div>
+  <button onClick={() => this.setState(back)}>Prev</button>
+  <button onClick={() => this.setState(next)}>Next</button>
+</div>
+```
+
 ## License
 
 MIT © [browniefed](https://github.com/browniefed)
