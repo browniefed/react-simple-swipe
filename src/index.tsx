@@ -6,9 +6,14 @@ export type Props = {
   height: number;
   defaultTransitionTime: number;
   transitionTime: number;
+  style?: React.CSSProperties;
   onIndexChange: (index: number, duration: number) => void;
   onTransitionComplete: (index: number) => void;
-  render: (index: number, duration: number, offset: number) => React.ReactNode[];
+  render: (
+    index: number,
+    duration: number,
+    offset: number
+  ) => React.ReactNode[];
 };
 
 export type State = {
@@ -65,7 +70,11 @@ class Swiper extends Component<Props, State> {
     this.props.onTransitionComplete(this.props.index);
 
     this.setState((state, props) => {
-      const items = props.render(props.index, props.transitionTime, state.offset);
+      const items = props.render(
+        props.index,
+        props.transitionTime,
+        state.offset
+      );
 
       const maxLength = items.length - 1;
 
@@ -107,7 +116,10 @@ class Swiper extends Component<Props, State> {
       }
     }
 
-    this.props.onIndexChange(nextIndex, Math.min(0.5, 1 - Math.abs(endPartial)));
+    this.props.onIndexChange(
+      nextIndex,
+      Math.min(0.5, 1 - Math.abs(endPartial))
+    );
   };
   transitionTo = (index: number, duration: number) => {
     this.setState({
@@ -120,7 +132,11 @@ class Swiper extends Component<Props, State> {
   };
   render() {
     const { offset } = this.state;
-    const items = this.props.render(this.props.index, this.props.transitionTime, this.state.offset);
+    const items = this.props.render(
+      this.props.index,
+      this.props.transitionTime,
+      this.state.offset
+    );
 
     const { transitionTime } = this.props;
 
@@ -131,7 +147,8 @@ class Swiper extends Component<Props, State> {
           width: `${this.props.width}px`,
           height: `${this.props.height}px`,
           overflow: "hidden",
-          position: "relative"
+          position: "relative",
+          ...this.props.style
         }}
         onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
